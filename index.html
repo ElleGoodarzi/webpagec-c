@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casper and Cy's Fun Game</title>
+    <style>
+        body {
+            background-color: #f0f8ff;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        .header {
+            background-color: #ffcc00;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff4500;
+            text-shadow: 2px 2px #ffa500;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .character-section {
+            width: 250px;
+            margin: 20px;
+            padding: 20px;
+            border: 2px solid #ff4500;
+            border-radius: 10px;
+            background-color: #ffebcd;
+            cursor: pointer;
+            transition: transform 0.2s, background-color 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .character-section:hover {
+            transform: scale(1.1);
+            background-color: #ffe4b5;
+        }
+        .character-name {
+            font-size: 1.5em;
+            font-weight: bold;
+            margin: 10px 0;
+            color: #4682b4;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .story-button {
+            background-color: #ff4500;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 20px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .story-button:hover {
+            background-color: #e63e00;
+        }
+        .story {
+            display: none;
+            background-color: #fff8dc;
+            padding: 20px;
+            border: 2px solid #ff4500;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .powers {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to Casper and Cy's Fun Game!</h1>
+    </div>
+    <button class="story-button" onclick="showStory()">⭐ Click to read the story ⭐</button>
+    <div class="story" id="story">
+        <p>In a fantastical world, the characters Yamo, Gray, Tomas, Samie, and Dave are preparing for an epic battle against the mighty God of Everything. Each character has unique powers that make them formidable opponents. Will they be able to defeat the God of Everything? Choose your character to find out!</p>
+    </div>
+    <div class="content">
+        <div class="character-section" onclick="chooseCharacter('Yamo', 'Super Strength')">
+            <img src="https://i.pinimg.com/originals/1b/9f/67/1b9f676048b41e004cf409e8d1647543.jpg" alt="Yamo">
+            <p class="character-name">Yamo</p>
+        </div>
+        <div class="character-section" onclick="chooseCharacter('Gray', 'Super Speed')">
+            <img src="https://i.pinimg.com/originals/0e/b2/2b/0eb22b8dd7a6a3a4bde6b7485ddfcb29.jpg" alt="Gray">
+            <p class="character-name">Gray</p>
+        </div>
+        <div class="character-section" onclick="chooseCharacter('Tomas', 'Lightning')">
+            <img src="https://i.pinimg.com/originals/68/4e/6b/684e6bf1630144a5d5e1c5a00a5e045e.jpg" alt="Tomas">
+            <p class="character-name">Tomas</p>
+        </div>
+        <div class="character-section" onclick="chooseCharacter('Samie', 'Teleportation')">
+            <img src="https://i.pinimg.com/originals/3d/60/85/3d60853ffb924bc6a5db9ac2d9082786.jpg" alt="Samie">
+            <p class="character-name">Samie</p>
+        </div>
+        <div class="character-section" onclick="chooseCharacter('Dave', 'Spawning Tornados')">
+            <img src="https://i.pinimg.com/originals/72/76/8c/72768c8cb6e408e23b58a54c54c8db5b.jpg" alt="Dave">
+            <p class="character-name">Dave</p>
+        </div>
+    </div>
+    <div class="story" id="character-story">
+        <p id="battle-story"></p>
+        <p id="character-power" class="powers"></p>
+    </div>
+    <script>
+        function showStory() {
+            document.getElementById('story').style.display = 'block';
+        }
+
+        function chooseCharacter(name, power) {
+            document.getElementById('battle-story').innerText = name + ' vs God of Everything!';
+            document.getElementById('character-power').innerText = name + "'s power: " + power;
+            document.getElementById('character-story').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
